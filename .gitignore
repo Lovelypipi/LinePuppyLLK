@@ -1,0 +1,41 @@
+# Build outputs
+/build/
+/dist/
+/cmake-build-*/
+
+# Qt Creator and local IDE state
+/.qtcreator/
+/.vscode/
+/.qmlls.ini
+*.user
+*.user.*
+*.autosave
+*.qmake.stash
+
+# Generated CMake/Qt files that should stay out of the repo
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+Makefile
+*.ninja
+build.ninja
+
+# Windows build artifacts
+*.exe
+*.obj
+*.o
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.exp
+
+# Packaged release output
+*.zip
+*.7z
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp

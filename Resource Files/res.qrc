@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/res">
+        <file alias="llk.ico">../res/llk.ico</file>
+        <file alias="llk_main.bmp">../res/llk_main.bmp</file>
+        <file alias="llk_newbackground.bmp">../res/llk_newbackground.bmp</file>
+        <file alias="pic1.bmp">../res/Pic1.bmp</file>
+        <file alias="pic2.bmp">../res/Pic2.bmp</file>
+        <file alias="pic3.bmp">../res/Pic3.bmp</file>
+        <file alias="pic4.bmp">../res/Pic4.bmp</file>
+        <file alias="pic5.bmp">../res/Pic5.bmp</file>
+        <file alias="pic6.bmp">../res/Pic6.bmp</file>
+        <file alias="pic7.bmp">../res/Pic7.bmp</file>
+        <file alias="pic8.bmp">../res/Pic8.bmp</file>
+        <file alias="pic9.bmp">../res/Pic9.bmp</file>
+        <file alias="pic10.bmp">../res/Pic10.bmp</file>
+        <file alias="pic11.bmp">../res/Pic11.bmp</file>
+        <file alias="pic12.bmp">../res/Pic12.bmp</file>
+        <file alias="pic13.bmp">../res/Pic13.bmp</file>
+        <file alias="pic14.bmp">../res/Pic14.bmp</file>
+        <file alias="pic15.bmp">../res/Pic15.bmp</file>
+        <file alias="pic16.bmp">../res/Pic16.bmp</file>
+        <file alias="pic17.bmp">../res/Pic17.bmp</file>
+        <file alias="pic18.bmp">../res/Pic18.bmp</file>
+        <file alias="pic19.bmp">../res/Pic19.bmp</file>
+        <file alias="pic20.bmp">../res/Pic20.bmp</file>
+        <file alias="RemoveSoundEffects.mp3">../res/RemoveSoundEffects.mp3</file>
+        <file alias="BackgroundMusic.mp3">../res/BackgroundMusic.mp3</file>
+        <file alias="Remove_MethodOne.mp4">../res/Remove_MethodOne.mp4</file>
+        <file alias="Remove_MethodTwo.mp4">../res/Remove_MethodTwo.mp4</file>
+        <file alias="Remove_MethodThree.mp4">../res/Remove_MethodThree.mp4</file>
+        <file alias="LimitTime_Icon.png">../res/LimitTime_Icon.png</file>
+    </qresource>
+</RCC>
