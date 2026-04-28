@@ -30,10 +30,10 @@ void CustomModeSettingsDialog::InitUI(){
     m_spinMapCols->setRange(2, GameControl::MAP_COLS);
 
     m_spinMaxUseCount = new QSpinBox(this);
-    m_spinMaxUseCount->setRange(1, 99);
+    m_spinMaxUseCount->setRange(0, 99);
 
     m_spinResetCount = new QSpinBox(this);
-    m_spinResetCount->setRange(1, 99);
+    m_spinResetCount->setRange(0, 99);
 
     m_spinTimeLimit = new QSpinBox(this);
     m_spinTimeLimit->setRange(10, 3600);

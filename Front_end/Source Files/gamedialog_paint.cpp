@@ -12,24 +12,38 @@ void GameDialog::paintEvent(QPaintEvent*){
     painter.setFont(statFont);
     painter.setPen(QColor(92, 55, 24));
     painter.setBrush(QColor(255, 248, 235, 210));
-    painter.drawRoundedRect(150, 5, 500, 30, 10, 10);
+    painter.drawRoundedRect(110, 5, 580, 30, 10, 10);
     painter.setBrush(Qt::NoBrush);
     const QString timeLabel = m_bCustomMode ? "限时" : "用时";
     const qint64 timeValue = m_bCustomMode ? CurrentRemainingMs() : CurrentActiveElapsedMs();
-    const QString statText = QString("重排次数：%1    提示次数：%2    %3：%4")
-        .arg(m_resetCount)
-        .arg(m_tipCount)
+    auto buildRemainText = [](const QString& label, int usedCount, int maxCount){
+        if(maxCount < 0){
+            return QString("剩余%1不限").arg(label);
+        }
+        const int remainCount = qMax(0, maxCount - usedCount);
+        return QString("剩余%1:%2次").arg(label).arg(remainCount);
+    };
+    const bool showRemainStats = m_bCustomMode || m_levelIndex > 0;
+    const QString resetText = showRemainStats
+        ? buildRemainText("重排", m_resetCount, m_modeConfig.maxResetCount)
+        : QString("重排次数：%1").arg(m_resetCount);
+    const QString tipText = showRemainStats
+        ? buildRemainText("提示", m_tipCount, m_modeConfig.maxTipCount)
+        : QString("提示次数：%1").arg(m_tipCount);
+    const QString statText = QString("%1    %2    %3：%4")
+        .arg(resetText)
+        .arg(tipText)
         .arg(timeLabel)
         .arg(FormatElapsedText(timeValue));
     if(m_bCustomMode){
-        // 限时模式下显示精简统计 + 时间 + 剩余时间进度条
-        const QString compactText = QString("重排:%1   提示:%2   限时:%3")
-            .arg(m_resetCount)
-            .arg(m_tipCount)
+        //限时模式下显示精简统计 + 时间 + 剩余时间进度条
+        const QString compactText = QString("%1  %2  限时:%3")
+            .arg(resetText)
+            .arg(tipText)
             .arg(FormatElapsedText(timeValue));
-        painter.drawText(QRect(165, 5, 270, 30), Qt::AlignVCenter | Qt::AlignLeft, compactText);
+        painter.drawText(QRect(115, 5, 355, 30), Qt::AlignVCenter | Qt::AlignLeft, compactText);
 
-        const QRect barRect(445, 11, 185, 18);
+        const QRect barRect(477, 11, 200, 18);
         const qreal totalMs = static_cast<qreal>(m_modeConfig.timeLimitSeconds) * 1000.0;
         const qreal remainMs = static_cast<qreal>(CurrentRemainingMs());
         const qreal ratio = (totalMs > 0.0) ? qBound(0.0, remainMs / totalMs, 1.0) : 0.0;
